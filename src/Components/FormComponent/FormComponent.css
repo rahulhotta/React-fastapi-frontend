@@ -1,0 +1,34 @@
+.employee-form{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 10px;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+    gap: 20px;
+    border-radius: 20px;
+    margin: 10px 20px;
+    background-color: white;
+    box-shadow: var(--primary-box-shadow);
+}
+.drawer__form__button{
+    background-color: var(--primary-fg-color);
+    color: var(--tertiary-fg-color);
+    padding: 10px 20px;
+    width: 100px;
+    margin: 10px;
+    border: 2px solid var(--primary-fg-color);
+    border-radius: 20px;
+    cursor: pointer;
+}
+.drawer__form__image__input{
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-fg-color);
+}
+.MuiInputBase-input{
+    width: 270px !important;
+}

@@ -1,0 +1,9 @@
+.Ui__button{
+    background-color: var(--primary-fg-color);
+    color: var(--tertiary-fg-color);
+    border: 2px solid var(--primary-fg-color);
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px;
+}

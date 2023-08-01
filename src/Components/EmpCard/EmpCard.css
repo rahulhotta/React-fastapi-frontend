@@ -1,0 +1,30 @@
+.taskCard__container{
+    display: flex;
+    background-color: white;
+    box-shadow: var(--primary-box-shadow);
+    flex-direction: column;
+    width: 200px;
+    min-height: 200px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+.empCard__emp_photo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-fg-color);
+}
+.empCard__footer{
+    border-top: 2px solid var(--secondary-fg-color);
+    border-bottom: 2px solid var(--secondary-fg-color);
+    width: 100%;
+    margin-top: 5px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}

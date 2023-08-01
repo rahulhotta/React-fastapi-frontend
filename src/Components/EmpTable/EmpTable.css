@@ -1,0 +1,25 @@
+table{
+    border: 2px solid var(--primary-fg-color);
+    box-shadow: var(--primary-box-shadow);
+    /* border-radius: 20px;
+    padding: 10px; */
+}
+th{
+    border: 1px solid var(--primary-fg-color);
+    padding: 5px 10px;
+    text-align: center;
+}
+td{
+    border: 1px solid var(--primary-fg-color);
+    padding: 5px 10px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    text-align: center;
+}
+.empTable__img{
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--primary-fg-color);
+    border-radius: 50%;
+}
