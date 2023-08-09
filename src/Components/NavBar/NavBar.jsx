@@ -2,10 +2,9 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+import { BiSolidPlusSquare } from "react-icons/bi";
 import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
-import Popover from "@mui/material/Popover";
 import FormComponent from "../FormComponent/FormComponent";
 import "./NavBar.css";
 
@@ -26,19 +25,6 @@ const navItems = [
 ];
 
 export default function DrawerAppBar(props) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const open = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
-
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -55,8 +41,6 @@ export default function DrawerAppBar(props) {
     </div>
   );
 
-  //   const container = window !== undefined ? () => window().document.body : undefined;
-
   return (
     <div sx={{ display: "flex" }}>
       <div className="navbar__container">
@@ -66,7 +50,7 @@ export default function DrawerAppBar(props) {
           edge="start"
           onClick={handleDrawerToggle}
         >
-          <MenuIcon />
+          <BiSolidPlusSquare className="navbar__plus__icon" />
         </IconButton>
 
         <div className="navbar__links__container">
@@ -77,33 +61,6 @@ export default function DrawerAppBar(props) {
               </NavLink>
             </Button>
           ))}
-        </div>
-        <div>
-          <img
-            src={props.currentUser.img}
-            alt=""
-            className="navbar__user__img"
-            onClick={handleClick}
-          />
-          <Popover
-            id={id}
-            open={open}
-            anchorEl={anchorEl}
-            onClose={handleClose}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-          >
-            <div
-              className="navbar__logout__btn"
-              onClick={() => {
-                props.setIsLoggedIn(false);
-              }}
-            >
-              Log Out
-            </div>
-          </Popover>
         </div>
       </div>
       <Box component="nav">

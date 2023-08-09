@@ -1,5 +1,4 @@
 import "./App.css";
-import LoginPage from "./Components/LoginPage/LoginPage";
 import NavBar from "./Components/NavBar/NavBar";
 import HomePage from "./Components/HomePage/HomePage";
 import GraphPage from "./Components/GraphPage/GraphPage";
@@ -9,13 +8,6 @@ import { useState, createContext, useEffect } from "react";
 import axios from "axios";
 export const EmpContext = createContext();
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [currentUser, setCurrentUser] = useState({
-    id: 2,
-    email: "asutoshDora@gmail.com",
-    password: "password2",
-    img: "",
-  });
   const [employeeData, setEmployeeData] = useState([]);
   // Function to delete tasks from existing list
   const getEmployeeFromDb = () => {
@@ -59,29 +51,35 @@ function App() {
 
   return (
     <div className="App">
-      {/* <>
-        <EmpContext.Provider
-          value={{
-            employeeData,
-            setEmployeeData,
-            deleteTaskFromList,
-            editTaskInList,
-          }}
-        >
+      <>
           <NavBar
-            currentUser={currentUser}
-            setIsLoggedIn={setIsLoggedIn}
             setEmployeeData={setEmployeeData}
           />
-          <Routes>
-            <Route path="/" element={<HomePage currentUser={currentUser} />} />
-            <Route path="graph" element={<GraphPage />} />    
-            <Route path="cards" element={<CardPage />} />
-          </Routes>
-        </EmpContext.Provider>
-      </> */}
+          <EmpContext.Provider
+            value={{
+              employeeData,
+              setEmployeeData,
+              addEmployeeToList,
+              deleteTaskFromList,
+              editTaskInList,
+            }}
+          >
+            <NavBar
+              setEmployeeData={setEmployeeData}
+              addEmployeeToList={addEmployeeToList}
+            />
+            <Routes>
+              <Route
+                path="/"
+                element={<HomePage />}
+              />
+              <Route path="graph" element={<GraphPage />} />
+              <Route path="cards" element={<CardPage />} />
+            </Routes>
+          </EmpContext.Provider>
+        </>
 
-      {!isLoggedIn ? (
+      {/* {!isLoggedIn ? (
         <LoginPage
           setIsLoggedIn={setIsLoggedIn}
           setCurrentUser={setCurrentUser}
@@ -118,7 +116,7 @@ function App() {
             </Routes>
           </EmpContext.Provider>
         </>
-      )}
+      )} */}
     </div>
   );
 }
